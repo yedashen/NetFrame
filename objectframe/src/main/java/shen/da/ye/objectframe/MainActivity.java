@@ -46,7 +46,7 @@ import shen.da.ye.objectframe.util.StringUtils;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "cy===MainActivity";
+    private static final String TAG = "cy==MainActivity";
     private int mCurrentProgress = 0;
     private static final int PROGRESS_MAX = 100;
     private DownloadDialog mDownloadDialog;
