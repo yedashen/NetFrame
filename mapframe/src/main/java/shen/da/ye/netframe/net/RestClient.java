@@ -60,6 +60,9 @@ public class RestClient {
         this.BODY = body;
     }
 
+    public static RestClientBuilder builder() {
+        return new RestClientBuilder();
+    }
 
     private void request(HttpMethod method) {
         final RestService service = RestCreator.getService();
