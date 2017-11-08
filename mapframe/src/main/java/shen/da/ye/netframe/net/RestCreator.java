@@ -15,6 +15,17 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  **/
 
 public class RestCreator {
+    /**
+     * (3)下面是一张图片的url
+     * http://file.ataw.cn/HospPerformance/Model/Image/2017/06/20/File/20170620173507137A9A7CC4BD991149058A765A34095728CF.jpg?ut=20170620173516
+     * <p>
+     * （4）登录的
+     * private static final String BASE_URL = "http://127.0.0.1:50112/web/rest/";
+     * loginService
+     * params.put("userno","P31175685");
+     * params.put("password","zpepc001@");
+     * params.put("sessionid", UUID.randomUUID().toString().replaceAll("-",""));
+     */
     private static final class ParamHolder {
         private static final WeakHashMap<String, Object> REQUEST_PARAMS = new WeakHashMap<>();
     }
@@ -33,7 +44,7 @@ public class RestCreator {
         private static final int WRITE_TIME_OUT = 60;
 
         private static final OkHttpClient OK_HTTP_CLIENT = new OkHttpClient.Builder()
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+//                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .connectTimeout(CONN_TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
                 .writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS)
@@ -41,7 +52,7 @@ public class RestCreator {
     }
 
     private static final class RetrofitHolder {
-        private static final String BASE_URL = "http://127.0.0.1:50112/web/rest/";
+        private static final String BASE_URL = "http://127.0.0.1:50112/web/";
         private static final Retrofit RETROFIT = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(OkHttpHolder.OK_HTTP_CLIENT)
